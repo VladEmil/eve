@@ -137,7 +137,7 @@
               Tritanium
             </div>
             <div class="col-2">
-              {{tritanium}}
+              {{tritanium.toLocaleString('en-FR')}}
             </div>
           </div>
 
@@ -146,7 +146,7 @@
               Pyerite
             </div>
             <div class="col-2">
-              {{pyerite}}
+              {{pyerite.toLocaleString('en-FR')}}
             </div>
           </div>
 
@@ -155,7 +155,7 @@
               Mexallon
             </div>
             <div class="col-2">
-              {{mexallon}}
+              {{mexallon.toLocaleString('en-FR')}}
             </div>
           </div>
 
@@ -164,7 +164,7 @@
               Isogen
             </div>
             <div class="col-2">
-              {{isogen}}
+              {{isogen.toLocaleString('en-FR')}}
             </div>
           </div>
 
@@ -173,7 +173,7 @@
               Nocxium
             </div>
             <div class="col-2">
-              {{nocxium}}
+              {{nocxium.toLocaleString('en-FR')}}
             </div>
           </div>
 
@@ -182,7 +182,7 @@
               Zydrine
             </div>
             <div class="col-2">
-              {{zydrine}}
+              {{zydrine.toLocaleString('en-FR')}}
             </div>
           </div>
 
@@ -191,7 +191,7 @@
               Megacyte
             </div>
             <div class="col-2">
-              {{megacyte}}
+              {{megacyte.toLocaleString('en-FR')}}
             </div>
           </div>
         </div>
