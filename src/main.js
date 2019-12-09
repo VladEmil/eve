@@ -1,32 +1,86 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import setGlobalHelpers from './global.helpers'
-import './assets/custom.scss'
+/* ============
+ * Main File
+ * ============
+ *
+ * Will initialize the application.
+ */
 
-import './mixins'
-import './plugins'
-import './thirdParty'
+import Vue from 'vue';
 
-import './scss/style.scss'
-import './assets/fonts/bebasneue.css'
+/* ============
+ * Plugins
+ * ============
+ *
+ * Import and bootstrap the plugins.
+ */
 
-setGlobalHelpers()
-Vue.config.productionTip = false
+import './plugins/vuex';
+import './plugins/axios';
+import { i18n } from './plugins/vue-i18n';
+import { router } from './plugins/vue-router';
+import './plugins/vuex-router-sync';
+import './plugins/bootstrap';
+import './plugins/font-awesome';
+import './plugins/register-service-worker';
+
+/* ============
+ * Styling
+ * ============
+ *
+ * Import the application styling.
+ * Stylus is used for this boilerplate.
+ *
+ * If you don't want to use Stylus, that's fine!
+ * Replace the stylus directory with the CSS preprocessor you want.
+ * Import the entry point here & install the webpack loader.
+ *
+ * It's that easy...
+ *
+ * http://stylus-lang.com/
+ */
+
+import './assets/stylus/app.styl';
+
+/* ============
+ * Main App
+ * ============
+ *
+ * Last but not least, we import the main application.
+ */
+
+import App from './App.vue';
+import store from './store';
+
+Vue.config.productionTip = false;
+
+store.dispatch('auth/check');
 
 /* eslint-disable no-new */
 new Vue({
-  name: 'Root',
-  router,
-  store,
-  mounted () {
-    store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth)
-    window.addEventListener('resize', () => store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth))
-  },
+  /**
+   * Bind the Vue instance to the HTML.
+   */
+  el: '#app',
 
-  beforeDestroy () {
-    window.removeEventListener('resize', () => store.commit('dom/SET_WINDOW_WIDTH', window.innerWidth))
-  },
-  render: h => h(App)
-}).$mount('#app')
+  /**
+   * The localization plugin.
+   */
+  i18n,
+
+  /**
+   * The router.
+   */
+  router,
+
+  /**
+   * The Vuex store.
+   */
+  store,
+
+  /**
+   * Will render the application.
+   *
+   * @param {Function} h Will create an element.
+   */
+  render: h => h(App),
+});
