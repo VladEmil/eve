@@ -286,8 +286,9 @@ export default {
       let jaspet = parseInt(Math.floor(+this.jaspet / 100) * 86 * (this.reprocessPercent / 100))
       let pyroxeres = parseInt(Math.floor(+this.pyroxeres / 100) * 6 * (this.reprocessPercent / 100))
       let ochre = parseInt(Math.floor(+this.ochre / 100) * 138 * (this.reprocessPercent / 100))
+      let crokite = parseInt(Math.floor(+this.crokite / 100) * 874 * (this.reprocessPercent / 100))
 
-      let nocxium = hedbergite + hemorphite + jaspet + pyroxeres + ochre
+      let nocxium = hedbergite + hemorphite + jaspet + pyroxeres + ochre + crokite
       return nocxium
     },
 
@@ -296,7 +297,9 @@ export default {
       let hemorphite = parseInt(Math.floor(+this.hemorphite / 100) * 17 * (this.reprocessPercent / 100))
       let bistot = parseInt(Math.floor(+this.bistot / 100) * 518 * (this.reprocessPercent / 100))
       let jaspet = parseInt(Math.floor(+this.jaspet / 100) * 9 * (this.reprocessPercent / 100))
-      let zydrine = hedbergite + hemorphite + bistot + jaspet
+      let crokite = parseInt(Math.floor(+this.crokite / 100) * 155 * (this.reprocessPercent / 100))
+
+      let zydrine = hedbergite + hemorphite + bistot + jaspet + crokite
       return zydrine
     },
 
